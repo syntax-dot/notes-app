@@ -5,5 +5,5 @@ export interface NotesGridProps {
 }
 
 export interface NotesGridEmits {
-  (emit: 'update', note: Note[]): void
+  (emit: 'update', note: Note): void
 }
