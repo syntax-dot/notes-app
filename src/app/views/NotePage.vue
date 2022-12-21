@@ -55,6 +55,7 @@ const note: Note = noteStore.load().find(v => v.id === +props.noteId)!
 .link {
   color: $link-color;
   cursor: pointer;
+  border-bottom: 1px solid $link-color;
 }
 
 .inactive_link {
