@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ActionsButtons } from '../ActionsButtons'
+import { ActionsButtons } from '../Buttons/ActionsButtons'
 import { NotesGridProps } from './NotesGrid.props'
 
 defineProps<NotesGridProps>()
@@ -32,14 +32,17 @@ defineProps<NotesGridProps>()
 
 .note {
   display: grid;
-  grid-template-rows: 1fr 1fr max-content;
+  grid-template-rows: repeat(3, max-content);
   border: 1px solid $border-color;
   border-radius: 6px;
+  align-content: space-between;
+  height: 100%;
   max-height: 235px;
   max-width: 270px;
   padding: 16px;
   box-sizing: border-box;
   transition: 0.3s ease-in-out;
+  gap: 12px;
 
   &:hover {
     border: 1px solid #000;
@@ -52,7 +55,11 @@ defineProps<NotesGridProps>()
 }
 
 .description {
-  overflow: hidden;
   font-size: 1.6rem;
+  line-height: 25px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 </style>

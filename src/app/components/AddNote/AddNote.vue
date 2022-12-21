@@ -11,6 +11,7 @@
       <textarea ref="textarea"
                 v-model="addedNote.description"
                 :class="$style.input_description"
+                maxlength="1500"
                 @input="autoHeight"/>
     </div>
     <AddButton @click="handleClick"/>
@@ -20,7 +21,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { Note } from '../../types/Note'
-import { AddButton } from '../AddButton'
+import { AddButton } from '../Buttons/AddButton'
 
 const textarea = ref<HTMLTextAreaElement>()
 
@@ -59,19 +60,23 @@ function handleClick() {
   font-size: 1.6rem;
   padding: 8px;
   box-sizing: border-box;
+  outline: none;
+
+  &:focus {
+    border: 1px solid #000;
+  }
 }
 
 .input_title {
   min-height: 36px;
   width: 100%;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .input_description {
   min-height: 60px;
   width: 100%;
   resize : none;
-  outline: none;
   overflow-y: auto;
   overflow: hidden;
   word-wrap: break-word;

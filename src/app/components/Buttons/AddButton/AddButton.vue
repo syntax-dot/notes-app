@@ -9,7 +9,7 @@
 </script>
 
 <style lang="scss" module>
-@import "../../../css/variables.scss";
+@import "../../../../css/variables.scss";
 .btn {
   background-color: $add-btn;
   border-radius: 6px;
