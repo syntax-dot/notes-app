@@ -1,8 +1,8 @@
 # notes-app
 
-![image](https://user-images.githubusercontent.com/75541723/208986380-0873413c-483c-42f7-8de2-7d8c33f45f75.png)
+![image](https://user-images.githubusercontent.com/75541723/208987470-1045b55c-b312-4c99-a877-3b05255cfc5d.png)
 
-![image](https://user-images.githubusercontent.com/75541723/208986573-e373a62a-2996-4d7d-98b3-3c670fcaff5a.png)
+![image](https://user-images.githubusercontent.com/75541723/208987554-39fb489a-dab0-4dc5-960f-f297f6fafef2.png)
 
 ## Запуск:
 - Необходимо запустить команду "dev": "vite" в файле package.json расположенном в корне проекта.
