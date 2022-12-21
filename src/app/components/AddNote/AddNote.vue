@@ -12,7 +12,6 @@
         <h2>Описание</h2>
         <textarea ref="textarea"
                   v-model="addedNote.description"
-                  :style="{ height : `${textareaHeight}rem` }"
                   :class="$style.input_description"
                   maxlength="1500"
                   @input="autoHeight"/>
@@ -34,8 +33,6 @@ const emit = defineEmits<AddNoteEmits>()
 
 const textarea = ref<HTMLTextAreaElement>()
 
-const textareaHeight = ref(60)
-
 const addedNote = ref<Note>({
   id: 0,
   title: '',
@@ -46,9 +43,8 @@ function autoHeight() {
   if (!textarea.value)
     return
 
-  textareaHeight.value = textarea.value.scrollHeight
-
-  // textarea.value.style.height = `${textarea.value.scrollHeight}rem` // напрямую писать в стили
+  textarea.value.style.height = '1rem'
+  textarea.value.style.height = `${textarea.value.scrollHeight}rem`
 }
 
 function handleClick() {
@@ -95,8 +91,8 @@ function handleClick() {
 .input_description {
   min-height: 60rem;
   width: 100%;
-  resize : none;
-  overflow-y: auto;
+  resize: none;
+  // overflow: auto;
   overflow: hidden;
   word-wrap: break-word;
 }
