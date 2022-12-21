@@ -67,7 +67,7 @@ function handleClick() {
   display: grid;
   min-width: 415rem;
   gap: 20rem;
-  align-content: flex-start;
+  align-content: start;
 }
 
 .input_title,
