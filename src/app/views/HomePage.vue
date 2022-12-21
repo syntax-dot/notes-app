@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-
+import { AddNote } from '../components/AddNote'
 </script>
 
 <style lang="scss" module>
