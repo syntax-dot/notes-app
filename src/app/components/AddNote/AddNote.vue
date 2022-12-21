@@ -69,6 +69,7 @@ function handleClick() {
 
 .input_title,
 .input_description {
+  font-family: "Inter", sans-serif;
   margin-top: 10rem;
   border: 1rem solid $border-color;
   border-radius: 4rem;
