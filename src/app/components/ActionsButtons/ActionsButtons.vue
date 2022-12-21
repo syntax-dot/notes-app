@@ -11,7 +11,9 @@
 </template>
 
 <script lang="ts" setup>
+import { ActionsButtonsProps } from './ActionsButtons.props'
 
+defineProps<ActionsButtonsProps>()
 </script>
 
 <style lang="scss" module>
