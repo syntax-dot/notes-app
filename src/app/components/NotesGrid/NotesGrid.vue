@@ -31,6 +31,8 @@ defineProps<NotesGridProps>()
 }
 
 .note {
+  display: grid;
+  grid-template-rows: 1fr 1fr max-content;
   border: 1px solid $border-color;
   border-radius: 6px;
   max-height: 235px;
