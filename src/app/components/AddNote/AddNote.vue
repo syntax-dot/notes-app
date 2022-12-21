@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.root">
-    <transition-group name="add_note" appear>
+    <transition-group name="add" appear>
       <div :class="$style.title">
         <h2>Заголовок</h2>
         <input v-model="addedNote.title"
@@ -16,6 +16,7 @@
                   maxlength="1500"
                   @input="autoHeight"/>
       </div>
+
       <AddButton @click="handleClick"/>
     </transition-group>
   </div>
@@ -101,11 +102,11 @@ function handleClick() {
 </style>
 
 <style>
-.add_note-enter-active {
+.add-enter-active {
   animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.add_note-leave-active {
+.add-leave-active {
   animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
 }
 </style>

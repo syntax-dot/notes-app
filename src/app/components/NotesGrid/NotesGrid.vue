@@ -11,7 +11,8 @@
         <div :class="$style.description">
           {{ note.description }}
         </div>
-        <ActionsButtons :id="note.id"/>
+        <ActionsButtons :id="note.id"
+                        @remove="handleRemove"/>
       </div>
     </transition-group>
   </div>
@@ -22,6 +23,10 @@ import { ActionsButtons } from '../Buttons/ActionsButtons'
 import { NotesGridProps } from './NotesGrid.props'
 
 defineProps<NotesGridProps>()
+
+function handleRemove() {
+
+}
 </script>
 
 <style lang="scss" module>
