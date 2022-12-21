@@ -22,7 +22,7 @@ import { Note } from '../types/Note'
 const notes = ref<Note[]>(noteStore.load())
 
 function handleUpdate(note: Note) {
-  notes.value = [...notes.value, note]
+  notes.value = [...notes.value.filter(it => it.id !== note.id), note]
 }
 
 onMounted(() => {

@@ -29,7 +29,7 @@ function handleRemove(id: number) {
   if (!props.notes)
     return
 
-  emit('update', props.notes.filter(note => note.id === id))
+  emit('update', { ...props.notes.filter(item => item.id !== id) })
 }
 </script>
 
