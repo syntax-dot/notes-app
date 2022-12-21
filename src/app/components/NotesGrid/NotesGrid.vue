@@ -26,6 +26,9 @@ const props = defineProps<NotesGridProps>()
 const emit = defineEmits<NotesGridEmits>()
 
 function handleRemove(id: number) {
+  if (!props.notes)
+    return
+
   emit('update', props.notes.filter(note => note.id === id))
 }
 </script>
