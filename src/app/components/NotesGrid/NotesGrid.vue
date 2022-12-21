@@ -22,7 +22,6 @@ defineProps<NotesGridProps>()
 </script>
 
 <style lang="scss" module>
-@import "../../../css/variables.scss";
 .root {
   display: grid;
   grid-template-columns: repeat(3, max-content);

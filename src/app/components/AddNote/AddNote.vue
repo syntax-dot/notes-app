@@ -48,7 +48,6 @@ function handleClick() {
 </script>
 
 <style lang="scss" module>
-@import "../../../css/variables.scss";
 .root {
   display: grid;
   min-width: 415rem;

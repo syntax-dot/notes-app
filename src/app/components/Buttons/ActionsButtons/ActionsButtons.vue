@@ -17,8 +17,6 @@ defineProps<ActionsButtonsProps>()
 </script>
 
 <style lang="scss" module>
-@import "../../../../css/variables.scss";
-
 .root {
   display: flex;
   justify-content: space-between;
