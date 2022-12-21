@@ -5,7 +5,7 @@ export class NotesStore {
   static readonly ID_LS_KEY = 'Id'
 
   generateId() {
-    const lastId = localStorage.getItem(NotesStore.ID_LS_KEY) ?? '4' // Последний ID будет равен 4
+    const lastId = localStorage.getItem(NotesStore.ID_LS_KEY) ?? '4' // Последний ID будет равен 4 см. HomePage
     const id = +lastId + 1
 
     localStorage.setItem(NotesStore.ID_LS_KEY, `${id}`)
