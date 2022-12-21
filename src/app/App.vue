@@ -15,9 +15,7 @@
   height: 100%;
 }
 .content {
-  // max-width: 1390rem;
   height: 100%;
-  // margin: 0 auto;
 }
 </style>
 
@@ -42,7 +40,7 @@ button {
 #app,
 body,
 html {
-  height: 100%;
+  // height: 100%;
   width: 100%;
 }
 

@@ -61,11 +61,11 @@ watch(notes, noteStore.save)
 
 <style lang="scss" module>
 .root {
-  padding-top: 14rem;
-  // margin-top: 14rem;
-  margin-left: 211rem; // костыль для вёрстки
-  // padding: 0 120rem;
-  overflow: hidden;
+  padding: 14rem 40px;
+  // padding: 14px 210px; // как на макете
+  max-width: 1390rem;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .root,
@@ -76,6 +76,23 @@ watch(notes, noteStore.save)
 .content {
   display: grid;
   grid-template-columns: max-content 1fr;
-  margin-top: 24rem;
+  margin: 24rem 0;
+  gap: 26px;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+
+  .root {
+      padding: 14rem 14px;
+  }
+
 }
 </style>

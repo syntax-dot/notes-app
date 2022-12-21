@@ -36,7 +36,7 @@ function handleRemove(id: number) {
   display: grid;
   grid-template-columns: repeat(3, max-content);
   gap: 24rem;
-  margin-left: 26rem;
+  // margin-left: 26rem;
   align-content: start;
 }
 
@@ -71,6 +71,42 @@ function handleRemove(id: number) {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .root {
+    grid-template-columns: repeat(3, max-content);
+  }
+
+  .note {
+    max-width: 300rem;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .root {
+    grid-template-columns: repeat(2, max-content);
+  }
+
+  .note {
+    max-width: 330rem;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+
+  .root {
+    grid-template-columns: repeat(1, max-content);
+  }
+
+  .note {
+    max-width: 350px;
+  }
+
 }
 </style>
 

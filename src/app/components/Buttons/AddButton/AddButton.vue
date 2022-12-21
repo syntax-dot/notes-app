@@ -25,4 +25,11 @@
     box-shadow: 0rem 0rem 8rem 0rem rgba(0, 0, 255, 0.2);
   }
 }
+
+@media screen and (max-width: 1024px) {
+
+  .btn {
+    width: 100%;
+  }
+}
 </style>
