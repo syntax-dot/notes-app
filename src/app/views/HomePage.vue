@@ -9,5 +9,7 @@
 </script>
 
 <style lang="scss" module>
+.root {
 
+}
 </style>
