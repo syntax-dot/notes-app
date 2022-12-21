@@ -12,18 +12,18 @@
 @import "../../../../css/variables.scss";
 .btn {
   background-color: $add-btn;
-  border-radius: 6px;
-  min-height: 38px;
-  min-width: 100px;
+  border-radius: 6rem;
+  min-height: 38rem;
+  min-width: 100rem;
   color: #fff;
-  font-size: 1.6rem;
-  border: 1px solid rgba(0, 0, 0, 0);
+  font-size: 16rem;
+  border: 1rem solid rgba(0, 0, 0, 0);
   transition: 0.3s ease-in-out;
   cursor: pointer;
 
   &:hover {
-    border: 1px solid rgba(0, 0, 255, 1);
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 255, 0.2);
+    border: 1rem solid rgba(0, 0, 255, 1);
+    box-shadow: 0rem 0rem 8rem 0rem rgba(0, 0, 255, 0.2);
   }
 }
 </style>

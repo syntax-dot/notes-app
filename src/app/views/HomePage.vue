@@ -14,10 +14,8 @@
 import { ref, watch } from 'vue'
 import { AddNote } from '../components/AddNote'
 import { NotesGrid } from '../components/NotesGrid'
-import { NotesStore } from '../store/notes.store'
+import { noteStore } from '../store/notes.store'
 import { Note } from '../types/Note'
-
-const noteStore = new NotesStore()
 
 const notes = ref<Note[]>(noteStore.load())
 
@@ -53,10 +51,10 @@ const nones: Note[] = [
 
 <style lang="scss" module>
 .root {
-  padding-top: 14px;
-  // margin-top: 14px;
-  margin-left: 211px; // костыль для вёрстки
-  // padding: 0 120px;
+  padding-top: 14rem;
+  // margin-top: 14rem;
+  margin-left: 211rem; // костыль для вёрстки
+  // padding: 0 120rem;
 }
 
 .root,
@@ -67,6 +65,6 @@ const nones: Note[] = [
 .content {
   display: grid;
   grid-template-columns: max-content 1fr;
-  margin-top: 24px;
+  margin-top: 24rem;
 }
 </style>

@@ -22,16 +22,16 @@ defineProps<ActionsButtonsProps>()
 .root {
   display: flex;
   justify-content: space-between;
-  margin: 0 4px;
+  margin: 0 4rem;
 }
 
 .open,
 .close {
-  height: 31px;
-  width: 73px;
-  font-size: 1.4rem;
+  height: 31rem;
+  width: 73rem;
+  font-size: 14rem;
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: 4rem;
   background: transparent;
   box-sizing: border-box;
   transition: 0.3s ease-in-out;
@@ -39,7 +39,7 @@ defineProps<ActionsButtonsProps>()
 }
 
 .open {
-  border: 1px solid $action-open-btn;
+  border: 1rem solid $action-open-btn;
   color: $action-open-btn;
 
   &:hover {
@@ -49,7 +49,7 @@ defineProps<ActionsButtonsProps>()
 }
 
 .close {
-  border: 1px solid $action-remove-btn;
+  border: 1rem solid $action-remove-btn;
   color: $action-remove-btn;
 
   &:hover {

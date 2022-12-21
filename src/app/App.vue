@@ -6,16 +6,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" module>
 .root {
-
 }
 .content {
-  // max-width: 1390px;
+  // max-width: 1390rem;
   height: 100%;
   // margin: 0 auto;
 }
@@ -25,7 +22,7 @@
 @import "../css/variables.scss";
 
 :root {
-  font-size: 62.5%;
+  font-size: 6.25%;
 }
 
 #app,
@@ -47,12 +44,16 @@ html {
 }
 
 h1 {
-  font-size: 4rem;
-  letter-spacing: -1.5px;
+  font-size: 40rem;
+  letter-spacing: -1.5rem;
+}
+
+h2 {
+  font-size: 16rem;
 }
 
 body {
   background-color: $main-bg-color;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 </style>

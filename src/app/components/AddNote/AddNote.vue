@@ -20,8 +20,12 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { noteStore } from '../../store/notes.store'
 import { Note } from '../../types/Note'
 import { AddButton } from '../Buttons/AddButton'
+import { AddNoteEmits } from './AddNote.emits'
+
+const emit = defineEmits<AddNoteEmits>()
 
 const textarea = ref<HTMLTextAreaElement>()
 
@@ -35,11 +39,11 @@ function autoHeight() {
   if (!textarea.value)
     return
 
-  textarea.value.style.height = `${textarea.value.scrollHeight}px`
+  textarea.value.style.height = `${textarea.value.scrollHeight}rem`
 }
 
 function handleClick() {
-
+  emit('update', { ...addedNote.value, id: noteStore.generateId() })
 }
 </script>
 
@@ -47,34 +51,34 @@ function handleClick() {
 @import "../../../css/variables.scss";
 .root {
   display: grid;
-  min-width: 415px;
-  gap: 20px;
+  min-width: 415rem;
+  gap: 20rem;
   align-content: flex-start;
 }
 
 .input_title,
 .input_description {
-  margin-top: 10px;
-  border: 1px solid $border-color;
-  border-radius: 4px;
-  font-size: 1.6rem;
-  padding: 8px;
+  margin-top: 10rem;
+  border: 1rem solid $border-color;
+  border-radius: 4rem;
+  font-size: 16rem;
+  padding: 8rem;
   box-sizing: border-box;
   outline: none;
 
   &:focus {
-    border: 1px solid #000;
+    border: 1rem solid #000;
   }
 }
 
 .input_title {
-  min-height: 36px;
+  min-height: 36rem;
   width: 100%;
   font-weight: 600;
 }
 
 .input_description {
-  min-height: 60px;
+  min-height: 60rem;
   width: 100%;
   resize : none;
   overflow-y: auto;

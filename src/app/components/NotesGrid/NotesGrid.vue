@@ -26,37 +26,38 @@ defineProps<NotesGridProps>()
 .root {
   display: grid;
   grid-template-columns: repeat(3, max-content);
-  gap: 24px;
-  margin-left: 26px;
+  gap: 24rem;
+  margin-left: 26rem;
+  align-content: start;
 }
 
 .note {
   display: grid;
   grid-template-rows: repeat(3, max-content);
-  border: 1px solid $border-color;
-  border-radius: 6px;
+  border: 1rem solid $border-color;
+  border-radius: 6rem;
   align-content: space-between;
   height: 100%;
-  max-height: 235px;
-  max-width: 270px;
-  padding: 16px;
+  max-height: 235rem;
+  max-width: 270rem;
+  padding: 16rem;
   box-sizing: border-box;
   transition: 0.3s ease-in-out;
-  gap: 12px;
+  gap: 12rem;
 
   &:hover {
-    border: 1px solid #000;
+    border: 1rem solid #000;
   }
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 20rem;
   font-weight: 600;
 }
 
 .description {
-  font-size: 1.6rem;
-  line-height: 25px;
+  font-size: 16rem;
+  line-height: 25rem;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
