@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.root">
-    *
+    <button>Добавить</button>
   </div>
 </template>
 

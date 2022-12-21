@@ -15,6 +15,8 @@ import { AddNote } from '../components/AddNote'
 
 <style lang="scss" module>
 .root {
-
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 0 120px;
 }
 </style>

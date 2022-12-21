@@ -8,10 +8,12 @@
       <div>Описание</div>
       <input type="text">
     </div>
+    <AddButton/>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { AddButton } from '../AddButton'
 
 </script>
 
