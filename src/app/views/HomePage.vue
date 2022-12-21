@@ -6,7 +6,8 @@
     <div :class="$style.content">
       <AddNote @update="handleUpdate"/>
       <NotesGrid v-if="notes"
-                 :notes="notes"/>
+                 :notes="notes"
+                 @update="handleUpdate"/>
     </div>
   </div>
 </template>

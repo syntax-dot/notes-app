@@ -20,12 +20,13 @@
 
 <script lang="ts" setup>
 import { ActionsButtons } from '../Buttons/ActionsButtons'
-import { NotesGridProps } from './NotesGrid.props'
+import { NotesGridEmits, NotesGridProps } from './NotesGrid.props'
 
-defineProps<NotesGridProps>()
+const props = defineProps<NotesGridProps>()
+const emit = defineEmits<NotesGridEmits>()
 
-function handleRemove() {
-
+function handleRemove(id: number) {
+  emit('update', props.notes.filter(note => note.id === id))
 }
 </script>
 
