@@ -7,7 +7,30 @@
 </template>
 
 <script setup lang="ts">
+import { Note } from './types/Note'
 
+const nones: Note[] = [
+  {
+    id: 1,
+    title: 'It is a long established fact that a reader will be distracted.',
+    description: 'It is a long established fact that a reader will be distracted.',
+  },
+  {
+    id: 2,
+    title: 'It is a long established fact that a reader will be distracted.',
+    description: 'It is a long established fact that a reader will be distracted.',
+  },
+  {
+    id: 3,
+    title: 'It is a long established fact that a reader will be distracted.',
+    description: 'It is a long established fact that a reader will be distracted.',
+  },
+  {
+    id: 4,
+    title: 'It is a long established fact that a reader will be distracted.',
+    description: 'It is a long established fact that a reader will be distracted.',
+  },
+]
 </script>
 
 <style lang="scss" module>
