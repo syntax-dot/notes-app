@@ -1,6 +1,8 @@
 <template>
   <div :class="$style.root">
-    *
+    <div>
+      *
+    </div>
   </div>
 </template>
 
@@ -10,6 +12,7 @@
 
 <style lang="scss" module>
 .root {
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 </style>

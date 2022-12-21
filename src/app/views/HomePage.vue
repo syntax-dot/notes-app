@@ -6,11 +6,13 @@
       </h1>
       <AddNote/>
     </div>
+    <NotesGrid/>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { AddNote } from '../components/AddNote'
+import { NotesGrid } from '../components/NotesGrid'
 </script>
 
 <style lang="scss" module>
