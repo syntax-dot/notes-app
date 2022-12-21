@@ -12,6 +12,7 @@
           {{ note.description }}
         </div>
         <ActionsButtons :id="note.id"
+                        @open="$router.push(`/note/${note.id}`)"
                         @remove="handleRemove"/>
       </div>
     </transition-group>
@@ -29,7 +30,7 @@ function handleRemove(id: number) {
   if (!props.notes)
     return
 
-  emit('update', Object.assign(props.notes.filter(item => item.id === id)))
+  emit('update', Object.assign(props.notes.filter(item => item.id === id))) // переделать
 }
 </script>
 

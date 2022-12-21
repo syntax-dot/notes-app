@@ -1,6 +1,8 @@
 <template>
   <div :class="$style.root">
     <button :class="$style.open">
+      <router-link :class="$style.link"
+                   :to="{ name: 'note', params: { noteId: id } }"/>
       Открыть
     </button>
 
@@ -19,6 +21,10 @@ const emit = defineEmits<ActionsButtonsEmits>()
 
 function handleRemove(id: number) {
   emit('remove', id)
+}
+
+function handleClick() {
+  emit('open')
 }
 </script>
 
@@ -60,5 +66,10 @@ function handleRemove(id: number) {
     background-color: $action-remove-btn;
     color: #fff;
   }
+}
+
+.link { // переделать
+  width: 100%;
+  height: 100%;
 }
 </style>

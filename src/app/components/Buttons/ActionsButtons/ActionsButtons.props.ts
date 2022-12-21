@@ -4,4 +4,5 @@ export interface ActionsButtonsProps {
 
 export interface ActionsButtonsEmits {
   (emit: 'remove', id: number): void
+  (emit: 'open'): void
 }
