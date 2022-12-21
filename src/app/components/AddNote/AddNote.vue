@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { noteStore } from '../../store/notes.store'
 import { Note } from '../../types/Note'
 import { AddButton } from '../Buttons/AddButton'
@@ -48,7 +48,7 @@ function autoHeight() {
 }
 
 function handleClick() {
-  if (!addedNote.value.description.trim && !addedNote.value.title.trim)
+  if (addedNote.value.description.length < 6 || addedNote.value.title.length < 6)
     return
 
   emit('update', { ...addedNote.value, id: noteStore.generateId() })
