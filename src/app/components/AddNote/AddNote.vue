@@ -1,24 +1,24 @@
 <template>
   <div :class="$style.root">
-    <transition-group name="add" appear>
-      <div :class="$style.title">
-        <h2>Заголовок</h2>
-        <input v-model="addedNote.title"
-               :class="$style.input_title"
-               type="text">
-      </div>
-      <div :class="$style.description">
-        <h2>Описание</h2>
-        <textarea ref="textarea"
-                  v-model="addedNote.description"
-                  :style="{ height : `${textareaHeight}rem` }"
-                  :class="$style.input_description"
-                  maxlength="1500"
-                  @input="autoHeight"/>
-      </div>
+    <!-- <transition-group name="add" appear> -->
+    <div :class="$style.title">
+      <h2>Заголовок</h2>
+      <input v-model="addedNote.title"
+             :class="$style.input_title"
+             type="text">
+    </div>
+    <div :class="$style.description">
+      <h2>Описание</h2>
+      <textarea ref="textarea"
+                v-model="addedNote.description"
+                :style="{ height : `${textareaHeight}rem` }"
+                :class="$style.input_description"
+                maxlength="1500"
+                @input="autoHeight"/>
+    </div>
 
-      <AddButton @click="handleClick"/>
-    </transition-group>
+    <AddButton @click="handleClick"/>
+    <!-- </transition-group> -->
   </div>
 </template>
 

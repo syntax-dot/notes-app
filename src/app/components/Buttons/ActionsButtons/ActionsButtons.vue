@@ -2,12 +2,13 @@
   <div :class="$style.root">
     <button :class="$style.open">
       <router-link :class="$style.link"
-                   :to="{ name: 'note', params: { noteId: id } }"/>
-      Открыть
+                   :to="{ name: 'note', params: { noteId: note.id } }">
+        Открыть
+      </router-link>
     </button>
 
     <button :class="$style.close"
-            @click="handleRemove(id)">
+            @click="handleRemove(note.id)">
       Удалить
     </button>
   </div>
@@ -46,15 +47,17 @@ function handleClick() {
   box-sizing: border-box;
   transition: 0.3s ease-in-out;
   cursor: pointer;
+
+  &:hover {
+    color: #fff;
+  }
 }
 
 .open {
   border: 1rem solid $action-open-btn;
-  color: $action-open-btn;
 
   &:hover {
     background-color: $action-open-btn;
-    color: #fff;
   }
 }
 
@@ -64,12 +67,17 @@ function handleClick() {
 
   &:hover {
     background-color: $action-remove-btn;
-    color: #fff;
   }
 }
 
 .link { // переделать
   width: 100%;
   height: 100%;
+  text-decoration: none;
+  color: $action-open-btn;
+
+  &:hover {
+    color: #fff;
+  }
 }
 </style>

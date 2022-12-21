@@ -1,5 +1,6 @@
+import { Note } from '../../../types/Note'
 export interface ActionsButtonsProps {
-  id: number
+  note: Note
 }
 
 export interface ActionsButtonsEmits {

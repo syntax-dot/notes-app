@@ -11,7 +11,7 @@
         <div :class="$style.description">
           {{ note.description }}
         </div>
-        <ActionsButtons :id="note.id"
+        <ActionsButtons :note="note"
                         @open="$router.push(`/note/${note.id}`)"
                         @remove="handleRemove"/>
       </div>
