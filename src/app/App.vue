@@ -58,5 +58,6 @@ h2 {
 body {
   background-color: $main-bg-color;
   font-family: "Inter", sans-serif;
+  font-size: 16rem;
 }
 </style>

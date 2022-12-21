@@ -2,7 +2,18 @@
   <div v-if="note"
        :class="$style.root">
     <a :class="$style.link"
-       @click="$router.push('/')">Главная <span>/ {{ note.title }}</span></a>
+       @click="$router.push('/')">Главная</a>
+    <span :class="$style.inactive_link"> / {{ note.title }}</span>
+
+    <div :class="$style.info">
+      <h1 :class="$style.title">
+        {{ note.title }}
+      </h1>
+
+      <div :class="$style.description">
+        {{ note.description }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,9 +46,29 @@ const note: Note = noteStore.load().find(v => v.id === +props.noteId)!
   margin: 0 auto;
 }
 
-.link {
+.link,
+.inactive_link {
   font-size: 16rem;
+  font-weight: 600;
+}
+
+.link {
   color: $link-color;
   cursor: pointer;
+}
+
+.inactive_link {
+  color: rgb(133, 133, 133);
+  cursor: default;
+}
+
+.info {
+  display: grid;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.description {
+  line-height: 25px;
 }
 </style>

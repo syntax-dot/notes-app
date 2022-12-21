@@ -1,11 +1,14 @@
 <template>
   <div :class="$style.root">
-    <button :class="$style.open">
+    <div>
       <router-link :class="$style.link"
+                   slots="button"
                    :to="{ name: 'note', params: { noteId: note.id } }">
-        Открыть
+        <button :class="$style.open">
+          Открыть
+        </button>
       </router-link>
-    </button>
+    </div>
 
     <button :class="$style.close"
             @click="handleRemove(note.id)">
@@ -22,10 +25,6 @@ const emit = defineEmits<ActionsButtonsEmits>()
 
 function handleRemove(id: number) {
   emit('remove', id)
-}
-
-function handleClick() {
-  emit('open')
 }
 </script>
 
@@ -55,6 +54,7 @@ function handleClick() {
 
 .open {
   border: 1rem solid $action-open-btn;
+  color: $action-open-btn;
 
   &:hover {
     background-color: $action-open-btn;
@@ -67,17 +67,6 @@ function handleClick() {
 
   &:hover {
     background-color: $action-remove-btn;
-  }
-}
-
-.link { // переделать
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: $action-open-btn;
-
-  &:hover {
-    color: #fff;
   }
 }
 </style>
