@@ -1,7 +1,24 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
+import * as path from 'path'
+import VueTypeImports from 'vite-plugin-vue-type-imports'
 
-// https://vitejs.dev/config/
+function generateScopedName(name: string, filename: string) {
+  const [file] = path.basename(filename, '.css').split('.')
+  const hash = Buffer.from(filename + name).toString('base64url').slice(-5)
+
+  return `${file}_${name}_${hash}`
+}
+
 export default defineConfig({
-  plugins: [vue()],
+  css: {
+    modules: {
+      generateScopedName,
+    },
+  },
+
+  plugins: [
+    VueTypeImports(),
+    Vue(),
+  ],
 })
