@@ -4,16 +4,22 @@
       Открыть
     </button>
 
-    <button :class="$style.close">
+    <button :class="$style.close"
+            @click="handleRemove(id)">
       Удалить
     </button>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ActionsButtonsProps } from './ActionsButtons.props'
+import { ActionsButtonsProps, ActionsButtonsEmits } from './ActionsButtons.props'
 
 defineProps<ActionsButtonsProps>()
+const emit = defineEmits<ActionsButtonsEmits>()
+
+function handleRemove(id: number) {
+  emit('remove', id)
+}
 </script>
 
 <style lang="scss" module>
