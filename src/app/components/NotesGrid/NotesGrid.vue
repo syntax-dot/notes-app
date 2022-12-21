@@ -73,14 +73,15 @@ function handleRemove(id: number) {
   -webkit-box-orient: vertical;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1380px) {
 
   .root {
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .note {
-    max-width: 300rem;
+    max-width: 100%;
+    max-height: 100%;
   }
 
 }
@@ -88,23 +89,15 @@ function handleRemove(id: number) {
 @media screen and (max-width: 768px) {
 
   .root {
-    grid-template-columns: repeat(2, max-content);
-  }
-
-  .note {
-    max-width: 330rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
 
   .root {
-    grid-template-columns: repeat(1, max-content);
-  }
-
-  .note {
-    max-width: 350px;
+    grid-template-columns: repeat(1, 1fr);
   }
 
 }

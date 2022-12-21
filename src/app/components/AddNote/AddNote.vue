@@ -101,10 +101,10 @@ function handleClick() {
   word-wrap: break-word;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1024px) {
 
   .root {
-    min-width: 315rem
+    min-width: 100%;
   }
 }
 </style>

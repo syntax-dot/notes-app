@@ -80,7 +80,7 @@ watch(notes, noteStore.save)
   gap: 26px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1240px) {
 
   .content {
     grid-template-columns: 1fr;
