@@ -1,5 +1,8 @@
 <template>
   <div :class="$style.root">
+    <h1 :class="$style.title">
+      Заметки
+    </h1>
     *
   </div>
 </template>

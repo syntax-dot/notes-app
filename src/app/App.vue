@@ -38,5 +38,6 @@ html {
 
 body {
   background-color: $main-bg-color;
+  font-family: 'Inter', sans-serif;
 }
 </style>
