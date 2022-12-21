@@ -22,8 +22,8 @@ import { AddButton } from '../AddButton'
 .root {
   display: grid;
   min-width: 415px;
-  margin-top: 24px;
   gap: 20px;
+  align-content: flex-start;
 }
 
 .input_title,

@@ -4,5 +4,5 @@ import NotePage from '../views/NotePage.vue'
 
 export const routes: RouteRecordRaw[] = [
   { path: '', component: HomePage, name: 'home' },
-  { path: '/note', component: NotePage, name: 'note' },
+  { path: '/note/:id', component: NotePage, name: 'note', props: true },
 ]

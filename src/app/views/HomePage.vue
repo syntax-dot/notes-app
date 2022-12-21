@@ -1,13 +1,12 @@
 <template>
   <div :class="$style.root">
-    <div>
-      <h1 :class="$style.title">
-        Заметки
-      </h1>
+    <h1>
+      Заметки
+    </h1>
+    <div :class="$style.content">
       <AddNote/>
+      <NotesGrid/>
     </div>
-
-    <NotesGrid/>
   </div>
 </template>
 
@@ -18,9 +17,17 @@ import { NotesGrid } from '../components/NotesGrid'
 
 <style lang="scss" module>
 .root {
+  // padding: 0 120px;
+}
+
+.root,
+.content {
+  height: 100%;
+}
+
+.content {
   display: grid;
   grid-template-columns: max-content 1fr;
-  padding: 0 120px;
-  height: 100%;
+  margin-top: 24px;
 }
 </style>
