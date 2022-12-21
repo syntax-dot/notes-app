@@ -5,13 +5,14 @@
     </h1>
     <div :class="$style.content">
       <AddNote @update="handleUpdate"/>
-      <NotesGrid :notes="nones"/>
+      <NotesGrid v-if="notes"
+                 :notes="notes"/>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { AddNote } from '../components/AddNote'
 import { NotesGrid } from '../components/NotesGrid'
 import { noteStore } from '../store/notes.store'
@@ -20,33 +21,37 @@ import { Note } from '../types/Note'
 const notes = ref<Note[]>(noteStore.load())
 
 function handleUpdate(note: Note) {
-  notes.value = [...notes.value.filter(it => it.id !== note.id), note]
+  notes.value = [...notes.value, note]
 }
 
-watch(notes, noteStore.save)
+onMounted(() => {
+  if (!notes.value.length) {
+    notes.value = [
+      {
+        id: 1,
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Culpa, illo.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.',
+      },
+      {
+        id: 2,
+        title: 'It is a long established fact that a reader will be distracted.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.',
+      },
+      {
+        id: 3,
+        title: 'It is a long established fact that a reader.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.',
+      },
+      {
+        id: 4,
+        title: 'It is a long established fact that a reader.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.',
+      },
+    ]
+  }
+})
 
-const nones: Note[] = [
-  {
-    id: 1,
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Culpa, illo.',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A cras semper auctor neque. Augue mauris augue neque gravida in fermentum et. Senectus et netus et malesuada fames ac.',
-  },
-  {
-    id: 2,
-    title: 'It is a long established fact that a reader will be distracted.',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A cras semper auctor neque. Augue mauris augue neque gravida in fermentum et. Senectus et netus et malesuada fames ac.',
-  },
-  {
-    id: 3,
-    title: 'It is a long established fact that a reader.',
-    description: 'It is a long established fact that a reader will be distracted.It is a long established fact that a reader will be distracted.',
-  },
-  {
-    id: 4,
-    title: 'It is a long established fact that a reader.',
-    description: 'It is a long established fact that a reader will be distracted.It is a long established fact that a reader will be distracted.',
-  },
-]
+watch(notes, noteStore.save)
 </script>
 
 <style lang="scss" module>
@@ -55,6 +60,7 @@ const nones: Note[] = [
   // margin-top: 14rem;
   margin-left: 211rem; // костыль для вёрстки
   // padding: 0 120rem;
+  overflow: hidden;
 }
 
 .root,

@@ -4,3 +4,27 @@ $border-color: #e0e0e0;
 $add-btn: #2e6ff8;
 $action-open-btn: #006aff;
 $action-remove-btn: #ff002f;
+
+// for notes
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

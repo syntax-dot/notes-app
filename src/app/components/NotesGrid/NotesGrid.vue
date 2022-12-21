@@ -1,16 +1,19 @@
 <template>
-  <div :class="$style.root">
-    <div v-for="note in notes"
-         :key="note.id"
-         :class="$style.note">
-      <h1 :class="$style.title">
-        {{ note.title }}
-      </h1>
-      <div :class="$style.description">
-        {{ note.description }}
+  <div v-if="notes"
+       :class="$style.root">
+    <transition-group name="notes" appear>
+      <div v-for="note in notes"
+           :key="note.id"
+           :class="$style.note">
+        <h1 :class="$style.title">
+          {{ note.title }}
+        </h1>
+        <div :class="$style.description">
+          {{ note.description }}
+        </div>
+        <ActionsButtons :id="note.id"/>
       </div>
-      <ActionsButtons :id="note.id"/>
-    </div>
+    </transition-group>
   </div>
 </template>
 
@@ -61,5 +64,15 @@ defineProps<NotesGridProps>()
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+</style>
+
+<style>
+.notes-enter-active {
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.notes-leave-active {
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
 }
 </style>

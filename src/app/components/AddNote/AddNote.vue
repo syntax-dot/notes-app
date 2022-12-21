@@ -1,21 +1,23 @@
 <template>
   <div :class="$style.root">
-    <div :class="$style.title">
-      <h2>Заголовок</h2>
-      <input v-model="addedNote.title"
-             :class="$style.input_title"
-             type="text">
-    </div>
-    <div :class="$style.description">
-      <h2>Описание</h2>
-      <textarea ref="textarea"
-                v-model="addedNote.description"
-                :style="{ height : `${textareaHeight}rem` }"
-                :class="$style.input_description"
-                maxlength="1500"
-                @input="autoHeight"/>
-    </div>
-    <AddButton @click="handleClick"/>
+    <transition-group name="add_note" appear>
+      <div :class="$style.title">
+        <h2>Заголовок</h2>
+        <input v-model="addedNote.title"
+               :class="$style.input_title"
+               type="text">
+      </div>
+      <div :class="$style.description">
+        <h2>Описание</h2>
+        <textarea ref="textarea"
+                  v-model="addedNote.description"
+                  :style="{ height : `${textareaHeight}rem` }"
+                  :class="$style.input_description"
+                  maxlength="1500"
+                  @input="autoHeight"/>
+      </div>
+      <AddButton @click="handleClick"/>
+    </transition-group>
   </div>
 </template>
 
@@ -44,11 +46,18 @@ function autoHeight() {
 
   textareaHeight.value = textarea.value.scrollHeight
 
-  // textarea.value.style.height = `${textarea.value.scrollHeight}rem`
+  // textarea.value.style.height = `${textarea.value.scrollHeight}rem` // напрямую писать в стили
 }
 
 function handleClick() {
+  if (!addedNote.value.description.trim && !addedNote.value.title.trim)
+    return
+
   emit('update', { ...addedNote.value, id: noteStore.generateId() })
+
+  addedNote.value.id = 0
+  addedNote.value.title = ''
+  addedNote.value.description = ''
 }
 </script>
 
@@ -88,5 +97,15 @@ function handleClick() {
   overflow-y: auto;
   overflow: hidden;
   word-wrap: break-word;
+}
+</style>
+
+<style>
+.add_note-enter-active {
+  animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.add_note-leave-active {
+  animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
 }
 </style>
