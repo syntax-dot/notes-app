@@ -41,6 +41,8 @@ const nones: Note[] = [
 
 <style lang="scss" module>
 .root {
+  margin-top: 14px;
+  margin-left: 211px; // костыль для вёрстки
   // padding: 0 120px;
 }
 

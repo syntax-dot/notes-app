@@ -3,13 +3,13 @@
     <div v-for="note in notes"
          :key="note.id"
          :class="$style.note">
-      <div :class="$style.title">
+      <h1 :class="$style.title">
         {{ note.title }}
-      </div>
+      </h1>
       <div :class="$style.description">
         {{ note.description }}
       </div>
-      <ActionsButtons/>
+      <ActionsButtons :id="note.id"/>
     </div>
   </div>
 </template>
@@ -39,20 +39,20 @@ defineProps<NotesGridProps>()
   max-width: 270px;
   padding: 16px;
   box-sizing: border-box;
-  overflow: hidden;
-}
+  transition: 0.3s ease-in-out;
 
-.title,
-.description {
-  font-size: 2rem;
+  &:hover {
+    border: 1px solid #000;
+  }
 }
 
 .title {
+  font-size: 2rem;
   font-weight: 600;
-
 }
 
 .description {
-
+  overflow: hidden;
+  font-size: 1.6rem;
 }
 </style>

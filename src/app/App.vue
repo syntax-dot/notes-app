@@ -11,12 +11,13 @@
 </script>
 
 <style lang="scss" module>
-.root,
+.root {
+
+}
 .content {
   max-width: 1390px;
-  // width: 1390px;
   height: 100%;
-  margin: 0 auto;
+  // margin: 0 auto;
 }
 </style>
 
