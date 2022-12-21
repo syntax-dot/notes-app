@@ -31,11 +31,13 @@ import { AddButton } from '../AddButton'
   margin-top: 10px;
   border: 1px solid $border-color;
   border-radius: 4px;
+  font-size: 1.6rem;
 }
 
 .input_title {
   min-height: 36px;
   width: 100%;
+  font-weight: 500;
 }
 
 .input_description {
