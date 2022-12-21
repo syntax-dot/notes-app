@@ -1,6 +1,9 @@
 <template>
   <div :class="$style.root">
-    *
+    <div>
+      <div>Заголовок</div>
+      <input type="text">
+    </div>
   </div>
 </template>
 
