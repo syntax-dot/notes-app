@@ -11,8 +11,9 @@
 </script>
 
 <style lang="scss" module>
-.root {
-
+.root,
+.content {
+  height: 100%;
 }
 </style>
 

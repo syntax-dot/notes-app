@@ -21,5 +21,6 @@ import { NotesGrid } from '../components/NotesGrid'
   display: grid;
   grid-template-columns: max-content 1fr;
   padding: 0 120px;
+  height: 100%;
 }
 </style>
