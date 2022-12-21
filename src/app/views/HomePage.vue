@@ -4,16 +4,28 @@
       Заметки
     </h1>
     <div :class="$style.content">
-      <AddNote/>
+      <AddNote @update="handleUpdate"/>
       <NotesGrid :notes="nones"/>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref, watch } from 'vue'
 import { AddNote } from '../components/AddNote'
 import { NotesGrid } from '../components/NotesGrid'
+import { NotesStore } from '../store/notes.store'
 import { Note } from '../types/Note'
+
+const noteStore = new NotesStore()
+
+const notes = ref<Note[]>(noteStore.load())
+
+function handleUpdate(note: Note) {
+  notes.value = [...notes.value.filter(it => it.id !== note.id), note]
+}
+
+watch(notes, noteStore.save)
 
 const nones: Note[] = [
   {
@@ -41,7 +53,8 @@ const nones: Note[] = [
 
 <style lang="scss" module>
 .root {
-  margin-top: 14px;
+  padding-top: 14px;
+  // margin-top: 14px;
   margin-left: 211px; // костыль для вёрстки
   // padding: 0 120px;
 }
