@@ -6,6 +6,7 @@
       </h1>
       <AddNote/>
     </div>
+
     <NotesGrid/>
   </div>
 </template>
@@ -18,7 +19,7 @@ import { NotesGrid } from '../components/NotesGrid'
 <style lang="scss" module>
 .root {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: max-content 1fr;
   padding: 0 120px;
 }
 </style>

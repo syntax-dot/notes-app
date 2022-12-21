@@ -36,6 +36,11 @@ html {
   width: 100%;
 }
 
+h1 {
+  font-size: 4rem;
+  letter-spacing: -1.5px;
+}
+
 body {
   background-color: $main-bg-color;
   font-family: 'Inter', sans-serif;

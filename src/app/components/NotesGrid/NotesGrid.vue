@@ -1,8 +1,10 @@
 <template>
   <div :class="$style.root">
-    <div>
-      *
-    </div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
   </div>
 </template>
 
@@ -14,5 +16,6 @@
 .root {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 </style>
