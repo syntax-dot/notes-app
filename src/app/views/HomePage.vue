@@ -5,7 +5,7 @@
     </h1>
     <div :class="$style.content">
       <AddNote/>
-      <NotesGrid/>
+      <NotesGrid :notes="nones"/>
     </div>
   </div>
 </template>
@@ -18,8 +18,8 @@ import { Note } from '../types/Note'
 const nones: Note[] = [
   {
     id: 1,
-    title: 'It is a long established fact that a reader will be distracted.',
-    description: 'It is a long established fact that a reader will be distracted.',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Culpa, illo.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A cras semper auctor neque. Augue mauris augue neque gravida in fermentum et. Senectus et netus et malesuada fames ac.',
   },
   {
     id: 2,
@@ -46,7 +46,7 @@ const nones: Note[] = [
 
 .root,
 .content {
-  height: 100%;
+  // height: 100%;
 }
 
 .content {

@@ -13,8 +13,8 @@
 <style lang="scss" module>
 .root,
 .content {
-  // max-width: 1390px;
-  width: 1390px;
+  max-width: 1390px;
+  // width: 1390px;
   height: 100%;
   margin: 0 auto;
 }
