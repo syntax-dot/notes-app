@@ -30,7 +30,7 @@ function handleRemove(id: number) {
   if (!props.notes)
     return
 
-  emit('update', Object.assign(props.notes.filter(item => item.id === id))) // переделать
+  emit('update', props.notes.find(item => item.id === id)!) // !undefined
 }
 </script>
 

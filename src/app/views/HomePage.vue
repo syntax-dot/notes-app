@@ -7,7 +7,7 @@
       <AddNote @update="handleUpdate"/>
       <NotesGrid v-if="notes"
                  :notes="notes"
-                 @update="handleUpdate"/>
+                 @remove="handleRemove"/>
     </div>
   </div>
 </template>
@@ -22,7 +22,11 @@ import { Note } from '../types/Note'
 const notes = ref<Note[]>(noteStore.load())
 
 function handleUpdate(note: Note) {
-  notes.value = [...notes.value.filter(it => it.id !== note.id), note]
+  notes.value = [...notes.value.filter(v => v.id !== note.id), note]
+}
+
+function handleRemove(note: Note) {
+  notes.value = [...notes.value.filter(v => v.id !== note.id)]
 }
 
 onMounted(() => {
