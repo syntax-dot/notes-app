@@ -23,14 +23,11 @@
 import { ActionsButtons } from '../Buttons/ActionsButtons'
 import { NotesGridEmits, NotesGridProps } from './NotesGrid.props'
 
-const props = defineProps<NotesGridProps>()
+defineProps<NotesGridProps>()
 const emit = defineEmits<NotesGridEmits>()
 
 function handleRemove(id: number) {
-  if (!props.notes)
-    return
-
-  emit('update', props.notes.find(item => item.id === id)!) // !undefined
+  emit('remove', id) // !undefined
 }
 </script>
 

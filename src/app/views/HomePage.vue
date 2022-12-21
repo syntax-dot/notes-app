@@ -25,8 +25,8 @@ function handleUpdate(note: Note) {
   notes.value = [...notes.value.filter(v => v.id !== note.id), note]
 }
 
-function handleRemove(note: Note) {
-  notes.value = [...notes.value.filter(v => v.id !== note.id)]
+function handleRemove(removedId: number) {
+  notes.value = [...notes.value.filter(v => v.id !== removedId)]
 }
 
 onMounted(() => {

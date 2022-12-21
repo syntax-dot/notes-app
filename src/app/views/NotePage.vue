@@ -7,12 +7,12 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 import { noteStore } from '../store/notes.store'
 import { Note } from '../types/Note'
 
 interface Props {
-  noteId: number
+  noteId: string
 }
 
 // let note: Note
@@ -20,12 +20,10 @@ interface Props {
 const props = defineProps<Props>()
 
 // onMounted(() => {
-//   note = noteStore.load().find(v => v.id === props.noteId)
+//   // note = noteStore.load().find(v => v.id === props.noteId)
+//   console.log('type', typeof (props.noteId))
 // })
-const note: Note = noteStore.load().find(v => v.id === props.noteId)
-
-console.log('id', props.noteId) // ID
-console.log('note', note) // undefined
+const note: Note = noteStore.load().find(v => v.id === +props.noteId)!
 </script>
 
 <style lang="scss" module>
